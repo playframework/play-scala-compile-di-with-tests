@@ -22,7 +22,7 @@ class MyApplicationBuilder {
 
   def build(): Application = {
     val env = Environment.simple()
-    val context = new ApplicationLoader.Context(
+    val context = ApplicationLoader.Context(
       environment = env,
       sourceMapper = None,
       webCommands = new DefaultWebCommands(),
@@ -33,7 +33,7 @@ class MyApplicationBuilder {
   }
 }
 
-class MyComponents(context: ApplicationLoader.Context) 
+class MyComponents(context: ApplicationLoader.Context)
   extends BuiltInComponentsFromContext(context)
   with I18nComponents
   with AhcWSComponents {
